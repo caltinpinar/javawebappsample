@@ -1,18 +1,16 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: calculator
+  name: javawebappsample
 spec:
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
-        app: calculator
+        app: javawebappsample
     spec:
       containers:
-      - name: calculator
-        image: <image>:$version
+      - name: javawebappsample
+        image: tofascrtest.azurecr.io/javawebappsample:latest
         ports:
         - containerPort: 8080
-      imagePullSecrets:
-      - name: <imagePullSecrets>
